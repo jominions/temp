@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>queryPanel.html<!--<SIAT_zh_CN original="queryPanel.html">queryPanel.html</SIAT_zh_CN>--></title>
+  
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="${resource(dir:'css', file: 'datasetExplorer.css')}">
+  
+  </head>
+  
+  <body>
+    <script type="text/javascript">
+  function setValueMethodChanged(value)
+  {
+  if(value=="highlow")
+      {document.getElementById("divhighlow").style.display="inline";
+       document.getElementById("divnumeric").style.display="none";
+       }
+  if(value=="numeric")
+      {
+      document.getElementById("divhighlow").style.display="none";
+      document.getElementById("divnumeric").style.display="inline"; 
+      }
+  if(value=="novalue")
+    {
+     document.getElementById("divhighlow").style.display="none";
+     document.getElementById("divnumeric").style.display="none";
+    }
+  }
+  function setValueOperatorChanged(value)
+  {
+  if(value=="BETWEEN")
+  document.getElementById("divhighvalue").style.display="inline";
+  else
+  document.getElementById("divhighvalue").style.display="none"; 
+  }
+    </script>
+  <div style="background:#eee;height:100%;padding:5px;">
+
+  <table style="font:9pt arial;width=500px">
+  <tr><td colspan="2">搜索的值可以通过<br >由进行实验室的高/低标志的约束来确定，或是值本身.<!--<SIAT_zh_CN original="Searches by value can be constrained by the high/low flag set by the<br> performing laboratory, or by the values themselves">搜索的值可以通过<br >由进行实验室的高/低标志的约束来确定，或是值本身</SIAT_zh_CN>--></td></tr>
+  <tr>
+  <td width="200px"><input type="radio"  name="setValueMethod" value="novalue" onclick="setValueMethodChanged(this.value)">没有价值的<!--<SIAT_zh_CN original="No Value">没有价值的</SIAT_zh_CN>-->
+  <br>
+  <input type="radio" name="setValueMethod" value="highlow" onclick="setValueMethodChanged(this.value)">通过高/低标志<!--<SIAT_zh_CN original="By high/low flag">通过高/低标志</SIAT_zh_CN>-->
+  <br>
+  <input type="radio" name="setValueMethod" CHECKED value="numeric" onclick="setValueMethodChanged(this.value)">通过数值变量<!--<SIAT_zh_CN original="By numeric value">通过数值变量</SIAT_zh_CN>--> 
+  <br><div style="visibility:hidden">
+  单位<!--<SIAT_zh_CN original="units">单位</SIAT_zh_CN>--> = <select id="setValueUnits">
+      </select></div>
+  </td>
+  <td width="200px">
+  <div id="divnumeric" style="display:inline">
+  请选择操作<!--<SIAT_zh_CN original="Please select operator">请选择操作</SIAT_zh_CN>-->:<br>
+  <select id="setValueOperator" onclick="setValueOperatorChanged(this.value);">
+  <option value="LT">少于<!--<SIAT_zh_CN original="LESS THAN">少于</SIAT_zh_CN>-->(<)</option>
+  <option value="LE">少于或者等于<!--<SIAT_zh_CN original="LESS THAN OR EQUAL TO">少于或者等于</SIAT_zh_CN>-->(<=)</option>
+  <option value="EQ">等于<!--<SIAT_zh_CN original="EQUAL TO">等于</SIAT_zh_CN>-->(=)</option>
+  <option value="BETWEEN">介于<!--<SIAT_zh_CN original="BETWEEN">介于</SIAT_zh_CN>--></option>
+  <option value="GT">大于<!--<SIAT_zh_CN original="GREATER THAN">大于</SIAT_zh_CN>-->(>)</option>
+  <option value="GE">大于或者等于<!--<SIAT_zh_CN original="GREATER THAN OR EQUAL TO">大于或者等于</SIAT_zh_CN>-->(>=)</option>
+  </select>
+  <br>
+  请输入变量<!--<SIAT_zh_CN original="Please enter value">请输入变量</SIAT_zh_CN>-->:<br>
+  <input type="text" size="5" name="lowvalue" id="setValueLowValue" value="" />
+  <div id="divhighvalue" style="display:none">且<!--<SIAT_zh_CN original="AND">且</SIAT_zh_CN>-->
+  <input type="text" size="5" name="highvalue" id="setValueHighValue" value="" /></div>
+  </div>
+  <div id="divhighlow" style="display:none">
+  请选择范围<!--<SIAT_zh_CN original="Please select range">请选择范围</SIAT_zh_CN>-->:<br>
+  <select id="setValueHighLowSelect">
+  <option value="L">低<!--<SIAT_zh_CN original="Low">低</SIAT_zh_CN>--></option>
+  <option value="H">高<!--<SIAT_zh_CN original="High">高</SIAT_zh_CN>--></option>
+  <option value="N">正常<!--<SIAT_zh_CN original="Normal">正常</SIAT_zh_CN>--></option>
+  </select>
+  </div>
+  </td>
+  </tr>
+  </table>
+  </div>
+<div id="setValueGraphs"></div>
+  </body>
+</html>

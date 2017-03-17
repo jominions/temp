@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>queryPanel.html<!--<SIAT_zh_CN original="queryPanel.html">queryPanel.html</SIAT_zh_CN>--></title>
+  
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="${resource(dir:'css', file: 'datasetExplorer.css')}">
+  
+  </head>
+  
+  <body>
+  <script type="text/javascript">
+    function exportDataCheckboxClick(ctl)
+    { //outputSelected(ctl);
+      
+      if(getSelected(ctl).length>0)
+        {
+          Ext.getCmp("exportStepDataSelectionNextButton").enable();
+        }
+        else
+        {
+          Ext.getCmp("exportStepDataSelectionNextButton").disable();
+        }
+    }  
+    </script>
+  <div style="background:#eee;height:100%;padding:5px; font:12pt arial">
+  <form name="exportDSForm">
+  提供变量给<!--<SIAT_zh_CN original="Provide values for">提供变量给</SIAT_zh_CN>-->:
+  <table cellpadding="5px">
+  <tr>
+  <td><input type="checkbox" name="exportDataCheckbox" onclick="exportDataCheckboxClick(exportDSForm.exportDataCheckbox)" value="RBM"><!--<SIAT_zh_CN original="RBM">RBM</SIAT_zh_CN>--></td><td>基于医学界的约定<!--<SIAT_zh_CN original="Rules Based Medicine">基于医学界的约定</SIAT_zh_CN>--></td></tr>
+    <tr><td><input type="checkbox" name="exportDataCheckbox" onclick="exportDataCheckboxClick(this.form.exportDataCheckbox)" value="基因"><!--<SIAT_zh_CN original="GENE">基因</SIAT_zh_CN>--></td><td>基因<!--<SIAT_zh_CN original="Gene">基因</SIAT_zh_CN>--></td></tr>
+  <tr><td><input type="checkbox" name="exportDataCheckbox" onclick="exportDataCheckboxClick(this.form.exportDataCheckbox)" value="SNP"><!--<SIAT_zh_CN original="SNP">SNP</SIAT_zh_CN>--></td><td>SNP<!--<SIAT_zh_CN original="SNP">SNP</SIAT_zh_CN>--></td></tr>
+  <tr><td><input type="checkbox" name="exportDataCheckbox" onclick="exportDataCheckboxClick(this.form.exportDataCheckbox)" value="临床"><!--<SIAT_zh_CN original="CLINICAL">临床</SIAT_zh_CN>--></td><td>临床<!--<SIAT_zh_CN original="Clinical">临床</SIAT_zh_CN>--></td></tr>
+    </table>
+  </form>
+  </div>
+  </body>
+</html>

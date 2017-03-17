@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>从比较的步骤中选取RBM路径的方法<!--<SIAT_zh_CN original="compareStepSelectPathwaysRBM">从比较的步骤中选取RBM路径的方法</SIAT_zh_CN>--></title> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="${resource(dir:'css', file: 'datasetExplorer.css')}">
+    <style>
+      p { width:430px; }
+        .ext-ie .x-form-text {position:static !important;}
+    </style>
+  </head>
+  
+  <body>
+  <div style="background:#eee;height:100%;padding:5px; font:11px tahoma, arial, helvetica, sans-serif;">
+    <div id="divallanalytesRBM" style="width:100%; font:11px tahoma, arial, helvetica, sans-serif"><br>请选择<!--<SIAT_zh_CN original="Please, select">请选择</SIAT_zh_CN>-->:<br>
+      <input type=radio name="rbfilter" VALUE="ALL" onClick="flipAll();">所有的分析物<!--<SIAT_zh_CN original="ALL Analytes">所有的分析物</SIAT_zh_CN>--><BR>           
+      <input type=radio name="rbfilter" VALUE="FILTER" onClick="searchPathwayRBM.disabled=false" CHECKED>通过基因/路径进行过滤<!--<SIAT_zh_CN original="Filter by gene/pathway">通过基因/路径进行过滤</SIAT_zh_CN>-->:
+      <input type="text"  size="80" name="searchPathwayRBM" id="searchPathwayRBM" autocomplete="off" />
+    </div>
+    <div id="divnclustersRBM" style="width:100%; font:11px tahoma, arial, helvetica, sans-serif"><br>选择聚类的数量<!--<SIAT_zh_CN original="Select the number of Clusters">选择聚类的数量</SIAT_zh_CN>-->:<br>
+      <input type="text"  size="3" id="nClustersRBM" />
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    createPathwaySearchBoxRBM(pageInfo.basePath+'/analysis/ajaxGetPathwaySearchBoxData', 430);    
+    if (GLOBAL.HeatmapType != 'KMeans') {
+    document.getElementById("divnclustersRBM").style.display = "none";
+    }
+    
+    function flipAll()  {
+      searchPathwayRBM.value = '';
+      searchPathwayRBM.disabled = true;   
+    }
+    
+  </script>
+  </body>
+</html>

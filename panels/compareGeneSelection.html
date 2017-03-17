@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>从比较的步骤中选取路径的方法<!--<SIAT_zh_CN original="compareStepSelectPathways">从比较的步骤中选取路径的方法</SIAT_zh_CN>--></title>  
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+      p { width:430px; }
+        .ext-ie .x-form-text {position:static !important;}
+    </style>
+  </head>
+  
+  <body>
+  <div style="background:#eee;height:100%;padding:5px; font:11px tahoma, arial, helvetica, sans-serif;">  
+    <table width="400">
+      <tr>
+        <td colspan="2">
+          <div id="divpathway" style="width:100%; font:11px tahoma, arial, helvetica, sans-serif"><br>选择一个基因/路径/mirID/UniProtID<!--<SIAT_zh_CN original="Select a Gene/Pathway/mirID/UniProtID">选择一个基因/路径/mirID/UniProtID</SIAT_zh_CN>-->:<br>
+            <input type="text"  size="80" id="searchPathway" autocomplete="off" />
+          </div>
+      </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div id="divnclusters" style="width:100%; font:11px tahoma, arial, helvetica, sans-serif"><br>选择聚类的数量<!--<SIAT_zh_CN original="Select the number of Clusters">选择聚类的数量</SIAT_zh_CN>-->:<br>
+            <input type="text"  size="3" id="nClusters" />
+          </div>
+      </td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    createNClustersBox();
+    createPathwaySearchBox();
+  </script><br/><br/>
+  </body>
+</html>
